@@ -16,12 +16,19 @@ num_of_guesses = 0
 while True:
     # 숫자 입력받기
     guess=int(input("1부터 100까지의 숫자를 입력하세요: "))
-    print(guess)
+    
+    num_of_guesses += 1
     
     # 조건문 if 사용
-    # 1. 사용자가 입력한 숫자랑 랜덤함수가 생성한 숫자 비교
-    #  추측한 숫자가 더 크다면 "입력한 숫자가 너무 큽니다." 라고 출력
+    # 사용자가 입력한 숫자랑 랜덤함수가 생성한 숫자 비교
+    # 추측한 숫자가 더 크다면 "입력한 숫자가 너무 큽니다." 라고 출력
+    if guess > number :
+        print('DOWN')
     #  더 작다면 "입력한 숫자가 너무 작습니다." 라고 출력
+    elif guess < number :
+        print('UP')
     # 같다면 "축하합니다. {0}회만에 숫자를 맞췄습니다. 라고 출력"
-    break
+    else : 
+        print('Congratulations! Correct answer in %d times!' % (num_of_guesses))
+        break
     
